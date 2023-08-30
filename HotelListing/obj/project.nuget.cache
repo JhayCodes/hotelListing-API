@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jq2H2mW8WSfUOeHY2NwEhGGOgU6N9wl2wpa0DatQ92TTkLg+VR+vBst623F1eZAyGTu5jFwLf9wM1sm1J3VMAw==",
+  "success": true,
+  "projectFilePath": "D:\\ProgramPractice\\C#\\hotelListing-API\\HotelListing\\HotelListing.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Joshua Ucal Mensah\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Joshua Ucal Mensah\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Joshua Ucal Mensah\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Joshua Ucal Mensah\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Joshua Ucal Mensah\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Joshua Ucal Mensah\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
