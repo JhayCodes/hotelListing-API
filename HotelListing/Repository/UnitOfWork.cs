@@ -15,7 +15,7 @@ namespace HotelListing.Repository
             _context = context;
         }
 
-        public IGenericRepository<Country> Countries => Countries ?? new GenericRepository<Country>(_context);
+        public IGenericRepository<Country> Countries => _countries ?? new GenericRepository<Country>(_context);
 
         public IGenericRepository<Hotel> Hotels => _hotels ?? new GenericRepository<Hotel>(_context);
 
