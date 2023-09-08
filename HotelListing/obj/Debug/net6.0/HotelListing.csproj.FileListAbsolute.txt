@@ -99,3 +99,8 @@ D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.A
 D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

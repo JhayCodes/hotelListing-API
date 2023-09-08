@@ -1,7 +1,9 @@
+using HotelListing;
 using HotelListing.Configurations;
 using HotelListing.Data;
 using HotelListing.IRepository;
 using HotelListing.Repository;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,10 @@ builder.Services.AddControllers().AddNewtonsoftJson(options => options.Serialize
 //dbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));
+
+//service extensions
+builder.Services.AddAuthentication();
+builder.Services.ConfigureIdentity();
 
 //create a custom cors policy
 builder.Services.AddCors(o =>
