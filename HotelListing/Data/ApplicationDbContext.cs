@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using HotelListing.Configurations.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelListing.Data
@@ -16,52 +17,14 @@ namespace HotelListing.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Country>().HasData(new Country
-            {
-                Id = 1,
-                Name = "Jamaica",
-                ShortName = "JM"
-            },
-            new Country
-            {
-                Id = 2,
-                Name = "Bahamas",
-                ShortName = "Bs"
-            },
-            new Country
-            {
-                Id = 3,
-                Name = "Cayman Island",
-                ShortName = "CI"
-            });
+            //function to seed country data
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
+            //function to seed hotel data
+            modelBuilder.ApplyConfiguration(new HotelConfiguration());
+            //function to seed role data
+            modelBuilder.ApplyConfiguration(new RoleConfiguration()); 
 
-            modelBuilder.Entity<Hotel>().HasData(
-                new Hotel
-                {
-                    Id = 1,
-                    Name = "Sandals Resort and Spa",
-                    Address = "Negril",
-                    CoutryId = 1,
-                    Rating = 4.5
-                },
-                new Hotel
-                {
-                    Id = 2,
-                    Name = "Grand Palidium",
-                    Address = "Nassua",
-                    CoutryId = 2,
-                    Rating = 4.5
-                },
-                new Hotel
-                {
-                    Id = 3,
-                    Name = "comfort Suites",
-                    Address = "Goerge Town",
-                    CoutryId = 3,
-                    Rating = 4.3
-                });
-
+            
         }
 
     }

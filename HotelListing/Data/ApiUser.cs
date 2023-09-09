@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotelListing.Data
 {
@@ -6,5 +7,7 @@ namespace HotelListing.Data
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+       
     }
 }

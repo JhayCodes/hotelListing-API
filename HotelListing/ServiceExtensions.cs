@@ -15,5 +15,16 @@ namespace HotelListing
             builder.AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
         }
+
+        public static void ConfigureJWT(this IServiceCollection services, IConfiguration Configuration)
+        {
+            var jwtSettings = Configuration.GetSection("Jwt");
+            var key = Environment.GetEnvironmentVariable("KEY");
+
+            services.AddAuthentication(o =>
+            {
+                o.DefaultAuthenticateScheme = JwtBearerDefaults.
+            })
+        }
     }
 }
