@@ -104,3 +104,4 @@ D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.A
 D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\ProgramPractice\C#\hotelListing-API\HotelListing\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -3,8 +3,11 @@ using HotelListing.Configurations;
 using HotelListing.Data;
 using HotelListing.IRepository;
 using HotelListing.Repository;
+using HotelListing.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //service extensions
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJWT(builder.Configuration);
 
 //create a custom cors policy
 builder.Services.AddCors(o =>
@@ -33,6 +37,8 @@ builder.Services.AddAutoMapper(typeof(MapperInitializer));
 
 //unit of work 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+//AuthManager implementation
+builder.Services.AddScoped<IAuthManager, AuthManager>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

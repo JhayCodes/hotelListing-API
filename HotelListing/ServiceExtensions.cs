@@ -1,7 +1,10 @@
 ﻿using HotelListing.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace HotelListing
 {
@@ -23,8 +26,20 @@ namespace HotelListing
 
             services.AddAuthentication(o =>
             {
-                o.DefaultAuthenticateScheme = JwtBearerDefaults.
+                o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; //adds authentication to the application with Jwt as default scheme
+                o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;// chalenge info based on Jwt.
             })
+                .AddJwtBearer(o =>
+                {
+                    o.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true, //validate who issued validation
+                        ValidateLifetime = true, //validate life time
+                        ValidateIssuerSigningKey = true, //validate if key is correct
+                        ValidIssuer = jwtSettings.GetSection("Issuer").Value,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)), //hash and encode the value of key
+                    };
+                });
         }
     }
 }
