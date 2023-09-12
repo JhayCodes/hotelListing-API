@@ -27,12 +27,12 @@ namespace HotelListing.Services
         {
             var signingCredentials = GetSigningCredentials();
             var claims = await GetClaims();
-            var token = GenerateTokenOoptions(signingCredentials, claims);
+            var token = GenerateTokenOptions(signingCredentials, claims);
 
             return new JwtSecurityTokenHandler().WriteToken(token); //serialize into string and return
         }
 
-        private JwtSecurityToken GenerateTokenOoptions(SigningCredentials signingCredentials, List<Claim> claims)
+        private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, List<Claim> claims)
         {
             var jwtSettings = _configuration.GetSection("Jwt");
             var expiration = DateTime.Now.AddMinutes(Convert.ToDouble(jwtSettings.GetSection("lifetime").Value));

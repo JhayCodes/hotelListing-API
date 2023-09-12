@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HotelListing.IRepository;
 using HotelListing.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +40,7 @@ namespace HotelListing.Controllers
             }
         }
 
+                   
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetCountry(int id)
         {
