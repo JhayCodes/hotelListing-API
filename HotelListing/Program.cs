@@ -59,6 +59,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
 
+app.UseAuthentication();//where the problem is
 
 app.UseAuthorization();
 
