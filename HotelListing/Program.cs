@@ -20,9 +20,30 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));
 
 //service extensions
-builder.Services.AddAuthentication();
+
 builder.Services.ConfigureIdentity();
-builder.Services.ConfigureJWT(builder.Configuration);
+//builder.Services.ConfigureJWT(builder.Configuration);
+builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection(JwtConfig));
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = jwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(jwt =>
+{
+    var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("JwtConfig").Value);
+    jwt.SaveToken = true;
+    jwt.TokenValidationParameters = new TokenValidationParameters(){
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,//for dev purpose
+        ValidateAudience = false, //for dev purpose
+        RequireExpirationTime = false,
+        ValidateLifetime = true
+    };
+});
 
 //create a custom cors policy
 builder.Services.AddCors(o =>
